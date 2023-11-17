@@ -1,9 +1,9 @@
-const isProd = process.env.NODE_ENV === 'prod'
+const isProd = process.env.NODE_ENV === 'production'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: isProd ? '/linked/' : '/',
+    baseURL: isProd ? '/the-one-linked/' : '',
     head: {
       title: 'The One Draw',
       charset: 'utf-8',
