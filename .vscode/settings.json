@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.postcss": "tailwindcss"
+  },
+  "emmet.includeLanguages": {
+    "postcss": "css"
+  },
+  
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.sortJSON": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+}
