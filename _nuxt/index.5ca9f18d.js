@@ -1,0 +1,1 @@
+import{a as n,N as t}from"./member.05846920.js";function o(r){const e=JSON.parse(JSON.stringify(r));return e.sort(()=>Math.random()-.5),e}function a(){return o(n).map(({key:e})=>e).join(t)}export{a as g};
