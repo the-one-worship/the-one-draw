@@ -1,6 +1,6 @@
-import HomeIcon from '~/components/icons/home.vue'
-import ArrowPathIcon from '~/components/icons/arrow-path.vue'
-import LinkIcon from '~/components/icons/link.vue'
+import HomeIcon from '~/components/icons/solid/home.vue'
+import PaintBrushIcon from '~/components/icons/solid/paint-brush.vue'
+import LinkIcon from '~/components/icons/solid/link.vue'
 
 export const NAV_ITEMS = [
   {
@@ -9,7 +9,7 @@ export const NAV_ITEMS = [
   },
   {
     name: 'Draw',
-    icon: ArrowPathIcon,
+    icon: PaintBrushIcon,
   },
   {
     name: 'Copy',

@@ -1,7 +1,5 @@
 <template>
-  <main>
-    <slot></slot>
-  </main>
+  <slot></slot>
   <nav class="h-18">
     <div class="ba h-18 fixed bottom-0 flex w-full justify-center">
       <ul
@@ -24,6 +22,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { NAV_ITEMS } from './constants'
+import getEncodeShuffleMember from '~/utils/get-encode-shuffle-member'
 
 const router = useRouter()
 
@@ -32,7 +31,7 @@ const navMethods = {
     router.push('/')
   },
   Draw() {
-    router.push({ name: 'r-id', params: { id: '12321' } })
+    router.push({ name: 'r-id', params: { id: getEncodeShuffleMember() } })
   },
   async Copy() {
     try {
