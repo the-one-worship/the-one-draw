@@ -1,11 +1,8 @@
-import getEncodeShuffleMember from '@/shared/utils/get-encode-shuffle-member'
+import { LEGACY_IDS } from '@/shared/constants/legacy'
 
+// handle legacy features
 export function generateStaticParams() {
-  return [
-    {
-      id: getEncodeShuffleMember(),
-    },
-  ]
+  return LEGACY_IDS.map(id => ({ id }))
 }
 
 export default function RenderLayout({

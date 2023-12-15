@@ -13,7 +13,7 @@ type Props = VariantProps<typeof buttonVariants> & {
 export function ActionDrawButton({ className, ...props }: Props) {
   // const onDraw = () => {}
   return (
-    <a className={cn(className)} href={`/r/${getEncodeShuffleMember()}`}>
+    <a className={cn(className)} href={`/r?id=${getEncodeShuffleMember()}`}>
       <DoubleButton {...props} className="w-full">
         Draw
       </DoubleButton>
