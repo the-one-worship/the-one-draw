@@ -6,7 +6,7 @@ import { Inter as FontSans } from 'next/font/google'
 import { Navbar } from '@/shared/components/navbar'
 import { cn } from '@/shared/helpers/class-name'
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 })
