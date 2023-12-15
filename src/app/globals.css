@@ -4,52 +4,43 @@
 
 @layer base {
   :root {
-    /* rgb(13, 2, 39) */
-    --color-black: 13 2 39;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    /* rgb(13, 2, 39) */
-    --color-background: 13 2 39;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    /* rgb(33, 33, 106) */
-    --color-primary: 33 33 106;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    /* rgb(16 34 229) */
-    --color-primary-light: 16 34 229;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    /* rgb(18, 18, 58) */
-    --color-primary-dark: 18 18 58;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    /* rgb(20 182 105) */
-    --color-secondary: 20 182 105;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* rgb(50 213 131) */
-    --color-secondary-light: 50 213 131;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    /* rgb(4 151 83) */
-    --color-secondary-dark: 4 151 83;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* rgb(232 240 254) */
-    --color-input-background: 232 240 254;
-  }
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-  :root[class~='dark'] {
-    /* rgb(144 202 249) */
-    --color-primary: 144 202 249;
-    /* rgb(227 242 253) */
-    --color-primary-light: 227 242 253;
-    /* rgb(66 165 245) */
-    --color-primary-dark: 66 165 245;
-
-    /* rgb(206 147 216) */
-    --color-secondary: 206 147 216;
-    /* rgb(243 229 245) */
-    --color-secondary-light: 243 229 245;
-    /* rgb(171 71 188) */
-    --color-secondary-dark: 171 71 188;
+    --radius: 0.5rem;
   }
 }
 
-body,
-html {
-  @apply bg-background text-accent;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

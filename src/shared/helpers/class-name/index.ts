@@ -1,8 +1,8 @@
-import clsx from 'clsx'
+import { cx } from 'class-variance-authority'
 import { twMerge } from 'tailwind-merge'
 
-type ClassValue = Parameters<typeof clsx>[0]
+type ClassValue = Parameters<typeof cx>[0]
 
-const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
+const cn = (...inputs: ClassValue[]) => twMerge(cx(inputs))
 
 export { cn }

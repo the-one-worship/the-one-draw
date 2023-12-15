@@ -1,9 +1,15 @@
 import './globals.css'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter as FontSans } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Navbar } from '@/shared/components/navbar'
+import { cn } from '@/shared/helpers/class-name'
+
+export const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
 
 export const metadata: Metadata = {
   title: 'The One Linked',
@@ -16,8 +22,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn('bg-background font-sans antialiased', fontSans.variable)}
+      >
+        <main>{children}</main>
+        <Navbar />
+      </body>
     </html>
   )
 }

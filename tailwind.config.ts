@@ -1,28 +1,11 @@
 import type { Config } from 'tailwindcss'
-import colors from 'tailwindcss/colors'
-import defaultTheme from 'tailwindcss/defaultTheme'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
+import animatePlugin from 'tailwindcss-animate'
 
-const { screens } = defaultTheme
-
-const sectionUtils = plugin(({ addUtilities, theme }) => {
+const customPlugin = plugin(({ addUtilities }) => {
   addUtilities([
     {
-      '.section': {
-        padding: theme('spacing.6'),
-        width: '100%',
-      },
-      [`@media (min-width: ${screens.md})`]: {
-        '.section': {
-          'padding-right': theme('spacing.8'),
-          'padding-left': theme('spacing.8'),
-        },
-      },
-      '.section-max-w': {
-        'margin-right': 'auto',
-        'margin-left': 'auto',
-        'max-width': screens.lg,
-      },
       '.text-fill-transparent': {
         'background-clip': 'text',
         '-webkit-text-fill-color': 'transparent',
@@ -31,73 +14,89 @@ const sectionUtils = plugin(({ addUtilities, theme }) => {
   ])
 })
 
-const linearGradientUtils = plugin(({ matchUtilities }) => {
-  matchUtilities(
-    {
-      'bg-gradient-to-deg': value => ({
-        'background-image': `linear-gradient(${value}deg, var(--tw-gradient-stops));`,
-      }),
-    },
-    {
-      values: Array.from({ length: 360 })
-        .map((_, index) => index)
-        .reduce(
-          (collation, current) => {
-            collation[current] = current
-            return collation
-          },
-          {} as Record<string, number>
-        ),
-    }
-  )
-})
-
 const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-  darkMode: 'class',
+  darkMode: ['class'],
+  content: ['./src/**/*.{ts,tsx}'],
   theme: {
-    colors: {
-      transparent: colors.transparent,
-      current: colors.current,
-      inherit: colors.inherit,
-      black: 'rgb(var(--color-black) / <alpha-value>)',
-      white: colors.white,
-      accent: colors.white,
-      'input-background': 'rgb(var(--color-input-background) / <alpha-value>)',
-      background: 'rgb(var(--color-background) / <alpha-value>)',
-      red: colors.red,
-      primary: {
-        DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
-        light: 'rgb(var(--color-primary-light) / <alpha-value>)',
-        dark: 'rgb(var(--color-primary-dark) / <alpha-value>)',
-      },
-      secondary: {
-        DEFAULT: 'rgb(var(--color-secondary) / <alpha-value>)',
-        light: 'rgb(var(--color-secondary-light) / <alpha-value>)',
-        dark: 'rgb(var(--color-secondary-dark) / <alpha-value>)',
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
       },
     },
     extend: {
-      zIndex: {
-        '1': '1',
-        '2': '2',
-        '3': '3',
-        '4': '4',
-        '5': '5',
-        '6': '6',
-        '7': '7',
-        '8': '8',
-        '9': '9',
-        header: '10',
-      },
-      backgroundImage: {
-        var: 'var(--bg-image, "");',
+      colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
       },
       borderRadius: {
-        inherit: 'inherit',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      zIndex: {
+        1: '1',
+        2: '2',
+        3: '3',
+        4: '4',
+        5: '5',
+        6: '6',
+        7: '7',
+        8: '8',
+        9: '9',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', ...fontFamily.sans],
       },
     },
   },
-  plugins: [sectionUtils, linearGradientUtils],
+  plugins: [animatePlugin, customPlugin],
 }
+
 export default config
