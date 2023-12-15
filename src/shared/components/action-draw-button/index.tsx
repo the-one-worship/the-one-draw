@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import type { VariantProps } from 'class-variance-authority'
 
 import {
@@ -13,10 +15,10 @@ type Props = VariantProps<typeof buttonVariants> & {
 export function ActionDrawButton({ className, ...props }: Props) {
   // const onDraw = () => {}
   return (
-    <a className={cn(className)} href={`/r?id=${getEncodeShuffleMember()}`}>
+    <Link className={cn(className)} href={`/r?id=${getEncodeShuffleMember()}`}>
       <DoubleButton {...props} className="w-full">
         Draw
       </DoubleButton>
-    </a>
+    </Link>
   )
 }
