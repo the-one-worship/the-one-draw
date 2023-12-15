@@ -32,12 +32,12 @@ export default function RenderPage() {
   }, [ids, router])
 
   return (
-    <div className="mt-8 flex items-center justify-center p-8">
+    <div className="flex items-center justify-center p-8 ">
       <ul className="grid gap-4">
         {groups?.map(([from, to]) => (
           <li
             key={`${from}-${to}`}
-            className="grid grid-cols-3 gap-2 text-xl font-bold"
+            className="grid grid-cols-3 gap-2 text-lg font-bold"
           >
             <p className="justify-self-end">{from}</p>
             <ArrowLongRightIcon className="h-6 w-6 justify-self-center" />
