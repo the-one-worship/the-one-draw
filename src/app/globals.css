@@ -31,6 +31,22 @@
     /* rgb(232 240 254) */
     --color-input-background: 232 240 254;
   }
+
+  :root[class~='dark'] {
+    /* rgb(144 202 249) */
+    --color-primary: 144 202 249;
+    /* rgb(227 242 253) */
+    --color-primary-light: 227 242 253;
+    /* rgb(66 165 245) */
+    --color-primary-dark: 66 165 245;
+
+    /* rgb(206 147 216) */
+    --color-secondary: 206 147 216;
+    /* rgb(243 229 245) */
+    --color-secondary-light: 243 229 245;
+    /* rgb(171 71 188) */
+    --color-secondary-dark: 171 71 188;
+  }
 }
 
 body,

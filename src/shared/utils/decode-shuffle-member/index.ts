@@ -1,5 +1,5 @@
-import { MemberMap } from '~/constants/member'
-import { NANO_HYPHEN_KEY } from '~/constants/nano'
+import { MemberMap } from '@/shared/constants/member'
+import { NANO_HYPHEN_KEY } from '@/shared/constants/nano'
 
 export default function decodeShuffleMember(value: string) {
   const list = value.split(NANO_HYPHEN_KEY)

@@ -1,7 +1,6 @@
-import { MEMBERS_LIST } from '~/constants/member'
-import { NANO_HYPHEN_KEY } from '~/constants/nano'
-
-import shuffle from '~/utils/shuffle'
+import { MEMBERS_LIST } from '@/shared/constants/member'
+import { NANO_HYPHEN_KEY } from '@/shared/constants/nano'
+import shuffle from '@/shared/utils/shuffle'
 
 export default function getEncodeShuffleMember() {
   const newMemberList = shuffle(MEMBERS_LIST)
