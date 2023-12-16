@@ -1,6 +1,11 @@
-export default function shuffle<T>(array: T[]) {
-  const arrCopy = JSON.parse(JSON.stringify(array)) as T[]
-  arrCopy.sort(() => Math.random() - 0.5)
+import cloneDeep from '@/shared/utils/clone-deep'
 
-  return arrCopy
+export default function shuffle<T>(array: T[]) {
+  const result = cloneDeep(array)
+
+  for (let i = 0; i < array.length; i++) {
+    const randomIndex = Math.floor(Math.random() * (array.length - i)) + i
+    ;[result[i], result[randomIndex]] = [result[randomIndex], result[i]]
+  }
+  return result
 }
