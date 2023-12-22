@@ -1,3 +1,7 @@
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
 const isProd = process.env.NODE_ENV === 'production'
 const basePath = isProd ? '/the-one-linked' : ''
 
@@ -9,4 +13,4 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = withBundleAnalyzer(nextConfig)

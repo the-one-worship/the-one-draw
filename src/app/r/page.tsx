@@ -3,7 +3,8 @@ import { useEffect, useMemo } from 'react'
 
 import { useRouter, useSearchParams } from 'next/navigation'
 
-import ArrowLongRightIcon from '@/shared/components/ui/icons/solid/arrow-long-right'
+import { MoveRightIcon } from 'lucide-react'
+
 import { MemberMap } from '@/shared/constants/member'
 import decodeShuffleMember from '@/shared/utils/decode-shuffle-member'
 import getEncodeShuffleMember from '@/shared/utils/get-encode-shuffle-member'
@@ -17,7 +18,8 @@ export default function RenderPage() {
   const groups = useMemo(
     () =>
       ids?.map((item, index) => {
-        const nextIdx = index + 1 < ids?.length ? index + 1 : 0
+        const isLastIdx = index === ids.length - 1
+        const nextIdx = isLastIdx ? 0 : index + 1
         const next = ids[nextIdx]
 
         return [item, next].map(val => MemberMap.get(val))
@@ -40,7 +42,7 @@ export default function RenderPage() {
             className="grid grid-cols-3 gap-2 text-lg font-bold"
           >
             <p className="justify-self-end">{from}</p>
-            <ArrowLongRightIcon className="h-6 w-6 justify-self-center" />
+            <MoveRightIcon className="h-6 w-6 justify-self-center" />
             <p className="justify-self-start">{to}</p>
           </li>
         ))}
