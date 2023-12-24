@@ -12,7 +12,7 @@ export const MEMBERS = [
   '昇翰',
   '婕茹',
   '維恩',
-] as const
+]
 
 export const MEMBERS_LIST = MEMBERS.map((value, index) => ({
   key: NANO_ID_LIST[index],

@@ -90,6 +90,10 @@ const config: Config = {
         7: '7',
         8: '8',
         9: '9',
+        header: '100',
+        dialog: '200',
+        'drawer-overlay': '299',
+        drawer: '300',
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],

@@ -34,7 +34,7 @@ export default function RenderPage() {
   }, [ids, router])
 
   return (
-    <div className="flex items-center justify-center p-8 ">
+    <div className="flex items-center justify-center p-8">
       <ul className="grid gap-4">
         {groups?.map(([from, to]) => (
           <li

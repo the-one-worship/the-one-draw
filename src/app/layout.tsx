@@ -3,7 +3,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
-import { Navbar } from '@/shared/components/navbar'
+import { Sidebar } from '@/shared/components/sidebar'
+import { Toaster } from '@/shared/components/ui/toast'
 import { cn } from '@/shared/helpers/class-name'
 
 const fontSans = FontSans({
@@ -27,7 +28,8 @@ export default function RootLayout({
         className={cn('bg-background font-sans antialiased', fontSans.variable)}
       >
         <main>{children}</main>
-        <Navbar />
+        <Sidebar />
+        <Toaster />
       </body>
     </html>
   )
