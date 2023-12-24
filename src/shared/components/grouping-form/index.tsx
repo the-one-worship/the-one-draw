@@ -35,6 +35,7 @@ export function GroupingForm({ className, onSubmit: onSubmitCallback }: Props) {
     >
       <Input
         type="number"
+        inputMode="numeric"
         className={cn(errors.groups ? ['border', 'border-red-400'] : '')}
         min={1}
         max={MEMBERS.length}
