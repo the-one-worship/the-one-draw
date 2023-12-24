@@ -45,6 +45,7 @@ export function Sidebar() {
                 drawing: onCloseDrawer,
                 copyURL: onCloseDrawer,
                 grouping: onCloseDrawer,
+                picking: onCloseDrawer,
               }}
             />
           </SidebarItem>
