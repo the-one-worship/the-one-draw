@@ -24,7 +24,7 @@ export function Sidebar() {
       <div className="mt-8"></div>
 
       <Drawer
-        className="overflow-y-auto rounded-t-xl bg-primary-foreground"
+        className="overflow-y-auto rounded-t-xl"
         open={open}
         direction="bottom"
         onClose={onCloseDrawer}
