@@ -2,8 +2,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-const isProd = process.env.NODE_ENV === 'production'
-const basePath = isProd ? '/the-one-linked' : ''
+const basePath = process.env.BASE_PATH || ''
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
