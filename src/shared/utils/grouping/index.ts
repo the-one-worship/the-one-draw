@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+
 export default function grouping<T>(source: Array<T>, groups: number) {
   if (groups <= 0) {
     throw new Error('at least 1 group')
@@ -12,5 +14,5 @@ export default function grouping<T>(source: Array<T>, groups: number) {
     res[groupIndex] = group
     groupIndex++
   }
-  return res
+  return res.map(value => ({ key: nanoid(), value }))
 }
